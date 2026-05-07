@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng điều khiển | SuoiDesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#004F2D"/>
+                    <path d="M10 10L22 22M22 10L10 22" stroke="#F4E87C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                SuoiDesign
+            </a>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active"><i class="fas fa-th-large"></i> Tổng quan</a>
+                <a href="admin.html" class="nav-item"><i class="fas fa-user-shield"></i> Quản trị</a>
+                <a href="studio.html" class="nav-item"><i class="fas fa-magic"></i> AI Studio</a>
+                <a href="social.html" class="nav-item"><i class="fas fa-share-nodes"></i> Tự động hóa</a>
+                <a href="writer.html" class="nav-item"><i class="fas fa-pen-nib"></i> AI Writer</a>
+                <a href="projects.html" class="nav-item"><i class="fas fa-folder"></i> Dự án</a>
+                <a href="assets.html" class="nav-item"><i class="fas fa-database"></i> Tài sản</a>
+                <div class="sidebar-bottom">
+                    <div id="theme-toggle" class="theme-toggle-container">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Chế độ màu</span>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> Cài đặt</a>
+                    <a href="login.html" class="nav-item" style="color: #f87171;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="dashboard-header" style="margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div>
+                    <h2 style="font-size: 1.8rem; font-weight: 700;">Chào buổi sáng, Nhà sáng tạo 👋</h2>
+                    <p style="color: var(--text-muted); font-size: 1rem;">Hôm nay bạn muốn bứt phá doanh số với sản phẩm nào?</p>
+                </div>
+                <div class="user-profile" style="display: flex; align-items: center; gap: 1.5rem;">
+                    <div style="text-align: right;">
+                        <span class="badge" style="background: linear-gradient(90deg, var(--primary), var(--primary-light)); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;">PREMIUM PLAN</span>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=S+D&background=004F2D&color=F4E87C" alt="User" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--accent);">
+                </div>
+            </header>
+
+            <div class="workspace">
+                <!-- Quick Actions / Upload Zone -->
+                <div class="card-glass" style="padding: 2.5rem; margin-bottom: 2.5rem; border: 2px dashed var(--glass-border); text-align: center; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--glass-border)'">
+                    <div style="background: var(--glass-bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--accent);"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Tải lên sản phẩm của bạn</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Kéo thả ảnh sản phẩm hoặc mẫu video Affiliate để AI tự động tối ưu không gian và viết nội dung.</p>
+                    <button class="btn btn-accent">Chọn tệp từ máy tính</button>
+                </div>
+
+                <div class="prompt-container card-glass">
+                    <textarea class="prompt-area" placeholder="Mô tả ý tưởng hoặc yêu cầu chỉnh sửa cho sản phẩm của bạn... (VD: Tạo không gian sang trọng, tối giản cho bình hoa này và viết kịch bản video TikTok Affiliate)"></textarea>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="fas fa-paperclip"></i></button>
+                            <button class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="fas fa-microphone"></i></button>
+                        </div>
+                        <button class="btn btn-accent">Tạo nội dung <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i></button>
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <div class="output-tabs">
+                        <div class="tab active">Văn bản</div>
+                        <div class="tab">Hình ảnh</div>
+                        <div class="tab">Cài đặt nâng cao</div>
+                    </div>
+
+                    <div class="output-container animate-fade-up">
+                        <div class="card" style="min-height: 300px; display: flex; align-items: center; justify-content: center; border-style: dashed;">
+                            <div style="text-align: center; color: var(--text-muted);">
+                                <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                                <p>Đang chờ câu lệnh của bạn...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Panel (History) -->
+        <aside class="history-panel">
+            <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Lịch sử gần đây</h3>
+            <div class="history-list">
+                <div class="card-glass" style="padding: 1rem; margin-bottom: 1rem; border-radius: 1rem; cursor: pointer;">
+                    <p style="font-size: 0.85rem; font-weight: 500;">Chiến dịch Marketing Cafe</p>
+                    <span style="font-size: 0.7rem; color: var(--text-muted);">2 giờ trước • Văn bản</span>
+                </div>
+                <div class="card-glass" style="padding: 1rem; margin-bottom: 1rem; border-radius: 1rem; cursor: pointer;">
+                    <p style="font-size: 0.85rem; font-weight: 500;">Logo Concept SuoiDesign</p>
+                    <span style="font-size: 0.7rem; color: var(--text-muted);">5 giờ trước • Hình ảnh</span>
+                </div>
+                <div class="card-glass" style="padding: 1rem; margin-bottom: 1rem; border-radius: 1rem; cursor: pointer;">
+                    <p style="font-size: 0.85rem; font-weight: 500;">Kịch bản Video TikTok</p>
+                    <span style="font-size: 0.7rem; color: var(--text-muted);">Hôm qua • Văn bản</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Gợi ý Prompt</h3>
+                <div class="card" style="background: var(--primary); padding: 1rem; border-radius: 1rem;">
+                    <p style="font-size: 0.8rem; color: #fff;">"Tạo một không gian văn phòng hiện đại với ánh sáng tự nhiên và cây xanh..."</p>
+                    <button class="btn btn-accent" style="width: 100%; margin-top: 0.8rem; padding: 0.4rem;">Dùng thử</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

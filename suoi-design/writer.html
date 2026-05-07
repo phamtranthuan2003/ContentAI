@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Writer | SuoiDesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#004F2D"/>
+                    <path d="M10 10L22 22M22 10L10 22" stroke="#F4E87C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                SuoiDesign
+            </a>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-th-large"></i> Tổng quan</a>
+                <a href="admin.html" class="nav-item"><i class="fas fa-user-shield"></i> Quản trị</a>
+                <a href="studio.html" class="nav-item"><i class="fas fa-magic"></i> AI Studio</a>
+                <a href="social.html" class="nav-item"><i class="fas fa-share-nodes"></i> Tự động hóa</a>
+                <a href="writer.html" class="nav-item active"><i class="fas fa-pen-nib"></i> AI Writer</a>
+                <a href="projects.html" class="nav-item"><i class="fas fa-folder"></i> Dự án</a>
+                <a href="assets.html" class="nav-item"><i class="fas fa-database"></i> Tài sản</a>
+                <div class="sidebar-bottom">
+                    <div id="theme-toggle" class="theme-toggle-container">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Chế độ màu</span>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> Cài đặt</a>
+                    <a href="login.html" class="nav-item" style="color: #f87171;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header" style="margin-bottom: 2.5rem; width: 100%;">
+                <h2 style="font-size: 1.8rem;">AI Writer</h2>
+                <p style="color: var(--text-muted);">Viết nội dung đột phá với trợ lý AI thông minh.</p>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 350px 1fr; gap: 2rem;">
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 1.5rem;">Cấu hình nội dung</h3>
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Loại nội dung</label>
+                        <select class="card-glass" style="width: 100%; padding: 0.8rem; color: #fff; border: 1px solid var(--glass-border); border-radius: 0.8rem;">
+                            <option>Bài viết Blog</option>
+                            <option>Kịch bản Video Affiliate</option>
+                            <option>Quảng cáo Facebook</option>
+                            <option>Mô tả sản phẩm</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Tông giọng</label>
+                        <select class="card-glass" style="width: 100%; padding: 0.8rem; color: #fff; border: 1px solid var(--glass-border); border-radius: 0.8rem;">
+                            <option>Chuyên nghiệp</option>
+                            <option>Hài hước</option>
+                            <option>Thân thiện</option>
+                            <option>Thuyết phục</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-accent" style="width: 100%; margin-top: 1rem;">Tạo bản thảo</button>
+                </div>
+
+                <div class="card-glass" style="padding: 2rem; min-height: 500px;">
+                    <textarea style="width: 100%; height: 100%; background: transparent; border: none; color: #fff; font-size: 1.1rem; line-height: 1.8; resize: none; outline: none;" placeholder="Nội dung AI của bạn sẽ xuất hiện ở đây..."></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

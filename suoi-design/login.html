@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập | SuoiDesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="landing-body" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem;">
+    <div class="glass-card animate-fade-up" style="width: 100%; max-width: 450px; padding: 3rem; background: rgba(255, 255, 255, 0.4);">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 1.5rem;">
+                <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#004F2D"/>
+                    <path d="M10 10L22 22M22 10L10 22" stroke="#F4E87C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span style="font-size: 1.8rem;">SuoiDesign</span>
+            </a>
+            <h2 style="font-size: 1.5rem; color: #111827;">Chào mừng trở lại</h2>
+            <p style="color: #6b7280;">Đăng nhập để tiếp tục sáng tạo</p>
+        </div>
+
+        <form action="dashboard.html">
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; color: #374151;">Email</label>
+                <input type="email" placeholder="name@company.com" style="width: 100%; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 1rem; outline: none; transition: border-color 0.3s;" required onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#e5e7eb'">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; color: #374151;">Mật khẩu</label>
+                <input type="password" placeholder="••••••••" style="width: 100%; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 1rem; outline: none; transition: border-color 0.3s;" required onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='#e5e7eb'">
+            </div>
+            <div style="text-align: right; margin-bottom: 2rem;">
+                <a href="#" style="font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 600;">Quên mật khẩu?</a>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem; border-radius: 1rem;">Đăng nhập</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 2rem; color: #6b7280; font-size: 0.95rem;">
+            Chưa có tài khoản? <a href="register.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Đăng ký miễn phí</a>
+        </p>
+    </div>
+</body>
+</html>

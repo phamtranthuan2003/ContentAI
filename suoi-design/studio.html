@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Studio | SuoiDesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#004F2D"/>
+                    <path d="M10 10L22 22M22 10L10 22" stroke="#F4E87C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                SuoiDesign
+            </a>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-th-large"></i> Tổng quan</a>
+                <a href="admin.html" class="nav-item"><i class="fas fa-user-shield"></i> Quản trị</a>
+                <a href="studio.html" class="nav-item active"><i class="fas fa-magic"></i> AI Studio</a>
+                <a href="social.html" class="nav-item"><i class="fas fa-share-nodes"></i> Tự động hóa</a>
+                <a href="writer.html" class="nav-item"><i class="fas fa-pen-nib"></i> AI Writer</a>
+                <a href="projects.html" class="nav-item"><i class="fas fa-folder"></i> Dự án</a>
+                <a href="assets.html" class="nav-item"><i class="fas fa-database"></i> Tài sản</a>
+                <div class="sidebar-bottom">
+                    <div id="theme-toggle" class="theme-toggle-container">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Chế độ màu</span>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> Cài đặt</a>
+                    <a href="login.html" class="nav-item" style="color: #f87171;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="dashboard-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; width: 100%;">
+                <div>
+                    <h2 style="font-size: 1.8rem;">AI Studio</h2>
+                    <p style="color: var(--text-muted);">Biến ảnh sản phẩm thô thành tác phẩm nghệ thuật chuẩn quốc tế.</p>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-outline"><i class="fas fa-undo"></i></button>
+                    <button class="btn btn-outline"><i class="fas fa-redo"></i></button>
+                    <button class="btn btn-accent"><i class="fas fa-download mr-2"></i> Xuất bản</button>
+                </div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; height: calc(100vh - 180px);">
+                <!-- Editor Canvas -->
+                <div class="card-glass" style="display: flex; flex-direction: column; position: relative; overflow: hidden;">
+                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); border-radius: 1rem; margin: 1rem; position: relative;">
+                        <!-- Mockup Image Preview -->
+                        <div id="image-preview" style="max-width: 80%; max-height: 80%; border-radius: 1rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden; position: relative;">
+                            <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?auto=format&fit=crop&q=80&w=800" alt="Sản phẩm" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 10px; right: 10px; background: var(--accent); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.7rem; font-weight: 700;">AI ENHANCED</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Editor Toolbar -->
+                    <div style="padding: 1.5rem; background: var(--bg-card); display: flex; justify-content: center; gap: 2rem; border-top: 1px solid var(--glass-border);">
+                        <div style="text-align: center; cursor: pointer;">
+                            <i class="fas fa-crop" style="font-size: 1.2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="font-size: 0.75rem;">Cắt ảnh</p>
+                        </div>
+                        <div style="text-align: center; cursor: pointer;">
+                            <i class="fas fa-sliders-h" style="font-size: 1.2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="font-size: 0.75rem;">Bộ lọc</p>
+                        </div>
+                        <div style="text-align: center; cursor: pointer;">
+                            <i class="fas fa-wand-magic-sparkles" style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--accent);"></i>
+                            <p style="font-size: 0.75rem;">AI Setup</p>
+                        </div>
+                        <div style="text-align: center; cursor: pointer;">
+                            <i class="fas fa-video" style="font-size: 1.2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="font-size: 0.75rem;">Affiliate Video</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Panel -->
+                <div class="card" style="padding: 1.5rem; overflow-y: auto;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Cấu hình AI</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.8rem;">Phong cách không gian</label>
+                        <select class="card-glass" style="width: 100%; padding: 0.8rem; border-radius: 0.8rem; color: #fff; border: 1px solid var(--glass-border);">
+                            <option>Sang trọng & Tối giản</option>
+                            <option>Thiên nhiên & Ánh sáng</option>
+                            <option>Studio chuyên nghiệp</option>
+                            <option>Nội thất hiện đại</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.8rem;">Tự động viết Content</label>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="badge" style="background: var(--glass-bg); padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 0.75rem; cursor: pointer; border: 1px solid var(--glass-border);">Affiliate TikTok</span>
+                            <span class="badge" style="background: var(--glass-bg); padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 0.75rem; cursor: pointer; border: 1px solid var(--glass-border);">Facebook Ads</span>
+                            <span class="badge" style="background: var(--glass-bg); padding: 0.4rem 0.8rem; border-radius: 0.5rem; font-size: 0.75rem; cursor: pointer; border: 1px solid var(--glass-border);">Story Instagram</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.8rem;">Độ phân giải</label>
+                        <div style="display: flex; gap: 1rem;">
+                            <div style="flex: 1; padding: 0.5rem; border: 1px solid var(--accent); border-radius: 0.5rem; text-align: center; font-size: 0.8rem;">4K Ultra</div>
+                            <div style="flex: 1; padding: 0.5rem; border: 1px solid var(--glass-border); border-radius: 0.5rem; text-align: center; font-size: 0.8rem;">Full HD</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        <i class="fas fa-bolt mr-2"></i> Chạy quy trình AI
+                    </button>
+
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--glass-border);">
+                        <h4 style="font-size: 0.9rem; margin-bottom: 1rem;">Kết quả Content AI</h4>
+                        <div class="card-glass" style="padding: 1rem; font-size: 0.85rem; color: var(--text-muted); min-height: 100px;">
+                            Sản phẩm bình hoa phong cách tối giản, tôn vinh nét đẹp không gian sống... [Đang chờ xử lý]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

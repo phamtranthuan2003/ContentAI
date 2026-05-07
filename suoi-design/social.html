@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tự động đăng bài | SuoiDesign</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo" style="margin-bottom: 2rem;">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#004F2D"/>
+                    <path d="M10 10L22 22M22 10L10 22" stroke="#F4E87C" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                SuoiDesign
+            </a>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item"><i class="fas fa-th-large"></i> Tổng quan</a>
+                <a href="admin.html" class="nav-item"><i class="fas fa-user-shield"></i> Quản trị</a>
+                <a href="studio.html" class="nav-item"><i class="fas fa-magic"></i> AI Studio</a>
+                <a href="social.html" class="nav-item active"><i class="fas fa-share-nodes"></i> Tự động hóa</a>
+                <a href="writer.html" class="nav-item"><i class="fas fa-pen-nib"></i> AI Writer</a>
+                <a href="projects.html" class="nav-item"><i class="fas fa-folder"></i> Dự án</a>
+                <a href="assets.html" class="nav-item"><i class="fas fa-database"></i> Tài sản</a>
+                <div class="sidebar-bottom">
+                    <div id="theme-toggle" class="theme-toggle-container">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Chế độ màu</span>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <a href="settings.html" class="nav-item"><i class="fas fa-cog"></i> Cài đặt</a>
+                    <a href="login.html" class="nav-item" style="color: #f87171;"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header style="margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.8rem;">Quản lý đăng bài tự động</h2>
+                <p style="color: var(--text-muted);">Kết nối tài khoản và lên lịch đăng bài trên mọi nền tảng chỉ với một cú nhấp chuột.</p>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+                <!-- Account Connections -->
+                <section>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Tài khoản đã kết nối</h3>
+                    <div class="grid" style="display: grid; gap: 1rem;">
+                        <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-tiktok" style="color: #fff;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.95rem;">TikTok Shop - Main</h4>
+                                    <p style="font-size: 0.75rem; color: #22c55e;">Đã kết nối • 45k followers</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Cài đặt</button>
+                        </div>
+
+                        <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-facebook-f" style="color: #fff;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.95rem;">SuoiDesign Fanpage</h4>
+                                    <p style="font-size: 0.75rem; color: #22c55e;">Đã kết nối • 12k likes</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Cài đặt</button>
+                        </div>
+
+                        <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem; opacity: 0.6;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 40px; height: 40px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-instagram" style="color: #fff;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.95rem;">Instagram Business</h4>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Chưa kết nối</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-accent" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Kết nối ngay</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Scheduling / Queue -->
+                <section>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Lịch trình đăng bài</h3>
+                    <div class="card" style="padding: 2rem; border: 1px solid var(--accent);">
+                        <h4 style="margin-bottom: 1rem;">Chiến dịch: Bình hoa tối giản</h4>
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?auto=format&fit=crop&q=80&w=100" style="width: 60px; height: 60px; border-radius: 0.5rem; object-fit: cover;">
+                            <div>
+                                <p style="font-size: 0.9rem;">1 video TikTok + 1 ảnh Instagram</p>
+                                <span style="font-size: 0.8rem; color: var(--accent);">Dự kiến: 19:00 Hôm nay</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="btn btn-primary" style="flex: 1;">Phê duyệt & Đăng</button>
+                            <button class="btn btn-outline" style="flex: 1;">Chỉnh sửa lịch</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <h4 style="font-size: 1rem; margin-bottom: 1rem;">Cấu hình đăng bài tự động</h4>
+                        <div class="card-glass" style="padding: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span style="font-size: 0.9rem;">Khung giờ vàng AI (High traffic)</span>
+                                <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 20px; position: relative; cursor: pointer;">
+                                    <div style="width: 16px; height: 16px; background: var(--accent); border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.9rem;">Tự động trả lời bình luận</span>
+                                <div style="width: 40px; height: 20px; background: rgba(255,255,255,0.1); border-radius: 20px; position: relative; cursor: pointer;">
+                                    <div style="width: 16px; height: 16px; background: #fff; border-radius: 50%; position: absolute; left: 2px; top: 2px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
