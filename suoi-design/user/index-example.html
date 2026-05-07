@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.nz.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/user-layout}">
+<head>
+    <title>SuoiDesign | Future of AI Content & Automation</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div style="max-width: 800px;">
+                <h1 style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1.1;">
+                    Tự động hóa nội dung <span style="color: var(--accent);">thương mại điện tử</span> bằng AI
+                </h1>
+                <p style="font-size: 1.25rem; color: #6b7280; margin-bottom: 2.5rem; line-height: 1.8;">
+                    Tạo hình ảnh sản phẩm chuyên nghiệp, viết nội dung bán hàng triệu view và tự động đăng bài trên mọi nền tảng chỉ trong vài phút.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="/register" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">Bắt đầu miễn phí</a>
+                    <a href="#features" class="btn btn-outline" style="padding: 1.2rem 3rem; font-size: 1.1rem;">Khám phá tính năng</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Tính năng nổi bật</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Mọi thứ bạn cần để bứt phá doanh số online</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="glass-card" style="padding: 2rem; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: rgba(0,79,45,0.1); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-magic" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">AI Studio</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Tạo ảnh sản phẩm chuyên nghiệp từ ảnh thô với AI</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: rgba(244,232,124,0.1); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-pen-nib" style="font-size: 1.5rem; color: var(--accent);"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">AI Writer</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Viết nội dung bán hàng, kịch bản video tự động</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem; text-align: center;">
+                    <div style="width: 60px; height: 60px; background: rgba(0,79,45,0.1); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-share-nodes" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Auto Social</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Đăng bài tự động trên TikTok, Facebook, Instagram</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cách hoạt động</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Chỉ 3 bước đơn giản để bắt đầu</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; font-weight: 700;">1</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Tải ảnh sản phẩm</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Upload ảnh thô hoặc chụp trực tiếp</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; font-weight: 700;">2</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">AI xử lý tự động</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">AI tạo ảnh đẹp, viết nội dung bán hàng</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; font-weight: 700;">3</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Đăng bài tự động</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Lên lịch và đăng bài trên mọi nền tảng</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="glass-card" style="padding: 4rem; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Sẵn sàng bứt phá doanh số?</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">Thử miễn phí 7 ngày, không cần thẻ tín dụng</p>
+                <a href="/register" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">Bắt đầu ngay</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

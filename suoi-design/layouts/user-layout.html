@@ -1,0 +1,89 @@
+<!-- User Layout Template - Thymeleaf -->
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.nz.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} ?: 'SuoiDesign | Future of AI Content & Automation'">SuoiDesign | Future of AI Content & Automation</title>
+    <link rel="stylesheet" th:href="@{/assets/style.css}" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="landing-body">
+    
+    <!-- HEADER -->
+    <header class="site-header">
+        <a th:href="@{/}" class="logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#004F2D"/>
+                <path d="M10 10L22 22M22 10L10 22" stroke="#F4E87C" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            SuoiDesign
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Tính năng</a></li>
+            <li><a th:href="@{/pricing}">Bảng giá</a></li>
+            <li><a href="#guide">Hướng dẫn</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+        <div class="auth-btns">
+            <button id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></button>
+            <a th:href="@{/login}" class="btn btn-outline" style="border-color: var(--border); color: var(--text-main);">Đăng nhập</a>
+            <a th:href="@{/register}" class="btn btn-primary">Bắt đầu ngay</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT - Dynamic content -->
+    <main layout:fragment="content">
+        <!-- Page content will be injected here -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 6rem; margin-bottom: 6rem;">
+            <div>
+                <div class="logo" style="margin-bottom: 2rem;">
+                    <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="#fff"/>
+                        <path d="M10 10L22 22M22 10L10 22" stroke="#004F2D" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span style="color: inherit; font-size: 2rem;">SuoiDesign</span>
+                </div>
+                <p style="color: var(--text-muted); line-height: 1.8;">Kiến tạo tương lai thương mại điện tử với AI.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 2rem;">Sản phẩm</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted);">
+                    <li>AI Studio</li>
+                    <li>Social Post</li>
+                    <li>Copywriting</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 2rem;">Liên kết</h4>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted);">
+                    <li>Bảng giá</li>
+                    <li>Hướng dẫn</li>
+                    <li>Hỗ trợ 24/7</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 2rem;">Newsletter</h4>
+                <div style="display: flex; gap: 0.5rem;">
+                    <input type="email" placeholder="Email của bạn" style="padding: 1rem; border-radius: 0.8rem; border: 1px solid var(--border); flex: 1; background: var(--glass-bg); color: var(--text-main);">
+                    <button class="btn btn-accent" style="padding: 1rem 1.5rem;">Gửi</button>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid var(--border); padding-top: 4rem; display: flex; justify-content: space-between; color: var(--text-muted); font-size: 0.9rem;">
+            <p>© 2024 SuoiDesign AI Workspace. All rights reserved.</p>
+            <div style="display: flex; gap: 3rem;">
+                <span>Facebook</span>
+                <span>TikTok</span>
+                <span>Instagram</span>
+            </div>
+        </div>
+    </footer>
+
+    <script th:src="@{/assets/script.js}" src="../assets/script.js"></script>
+</body>
+</html>

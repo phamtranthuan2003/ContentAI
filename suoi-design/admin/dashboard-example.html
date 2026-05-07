@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.nz.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin-layout}">
+<head>
+    <title>Bảng điều khiển | SuoiDesign</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <header class="dashboard-header" style="margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div>
+                <h2 style="font-size: 1.8rem; font-weight: 700;">Chào buổi sáng, Nhà sáng tạo 👋</h2>
+                <p style="color: var(--text-muted); font-size: 1rem;">Hôm nay bạn muốn bứt phá doanh số với sản phẩm nào?</p>
+            </div>
+            <button class="btn btn-accent"><i class="fas fa-plus mr-2"></i> Tạo dự án mới</button>
+        </header>
+
+        <!-- Stats Cards -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div class="card-glass" style="padding: 1.5rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Tài sản đã tạo</p>
+                <h3 style="font-size: 2rem; font-weight: 700;">248</h3>
+                <span style="font-size: 0.8rem; color: #4ade80;">+12% so với tháng trước</span>
+            </div>
+            <div class="card-glass" style="padding: 1.5rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Dự án đang chạy</p>
+                <h3 style="font-size: 2rem; font-weight: 700;">8</h3>
+                <span style="font-size: 0.8rem; color: var(--accent);">3 dự án mới tuần này</span>
+            </div>
+            <div class="card-glass" style="padding: 1.5rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Bài đăng tự động</p>
+                <h3 style="font-size: 2rem; font-weight: 700;">156</h3>
+                <span style="font-size: 0.8rem; color: #4ade80;">98% tỷ lệ thành công</span>
+            </div>
+            <div class="card-glass" style="padding: 1.5rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Lượt tương tác</p>
+                <h3 style="font-size: 2rem; font-weight: 700;">45.2K</h3>
+                <span style="font-size: 0.8rem; color: #4ade80;">+28% so với tháng trước</span>
+            </div>
+        </div>
+
+        <!-- Recent Projects -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem;">
+            <div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Dự án gần đây</h3>
+                <div style="display: grid; gap: 1rem;">
+                    <div class="card-glass" style="padding: 1.2rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(0,79,45,0.2); border-radius: 0.8rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-leaf" style="color: var(--accent);"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="font-size: 0.95rem;">Chiến dịch Bình hoa</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">12 tài sản • Đang chạy</p>
+                        </div>
+                        <span style="font-size: 0.8rem; color: #4ade80;">Hoàn thành 80%</span>
+                    </div>
+                    <div class="card-glass" style="padding: 1.2rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(244,232,124,0.1); border-radius: 0.8rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-tshirt" style="color: var(--accent);"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="font-size: 0.95rem;">BST Áo thun Hè</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">8 tài sản • Đã xong</p>
+                        </div>
+                        <span style="font-size: 0.8rem; color: var(--accent);">Hoàn thành 100%</span>
+                    </div>
+                </div>
+            </div>
+            <aside>
+                <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem;">Gợi ý Prompt</h3>
+                <div class="card" style="background: var(--primary); padding: 1rem; border-radius: 1rem;">
+                    <p style="font-size: 0.8rem; color: #fff;">"Tạo một không gian văn phòng hiện đại với ánh sáng tự nhiên và cây xanh..."</p>
+                    <button class="btn btn-accent" style="width: 100%; margin-top: 0.8rem; padding: 0.4rem;">Dùng thử</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
