@@ -47,52 +47,97 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
                 <!-- Account Connections -->
                 <section>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Tài khoản đã kết nối</h3>
-                    <div class="grid" style="display: grid; gap: 1rem;">
-                        <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="width: 40px; height: 40px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fab fa-tiktok" style="color: #fff;"></i>
-                                </div>
-                                <div>
-                                    <h4 style="font-size: 0.95rem;">TikTok Shop - Main</h4>
-                                    <p style="font-size: 0.75rem; color: #22c55e;">Đã kết nối • 45k followers</p>
-                                </div>
-                            </div>
-                            <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Cài đặt</button>
-                        </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.2rem;">Tài khoản đã kết nối</h3>
+                        <button class="btn btn-accent" onclick="openAddAccountModal()">
+                            <i class="fas fa-plus mr-2"></i> Thêm tài khoản
+                        </button>
+                    </div>
 
-                        <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="width: 40px; height: 40px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fab fa-facebook-f" style="color: #fff;"></i>
-                                </div>
-                                <div>
-                                    <h4 style="font-size: 0.95rem;">SuoiDesign Fanpage</h4>
-                                    <p style="font-size: 0.75rem; color: #22c55e;">Đã kết nối • 12k likes</p>
-                                </div>
+                    <!-- TikTok Accounts -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                            <div style="width: 32px; height: 32px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-tiktok" style="color: #fff; font-size: 0.9rem;"></i>
                             </div>
-                            <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Cài đặt</button>
+                            <span style="font-weight: 600; font-size: 0.95rem;">TikTok (2 tài khoản)</span>
+                            <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem; margin-left: auto;" onclick="openAddAccountModal('tiktok')">+ Thêm</button>
                         </div>
-
-                        <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1.2rem; opacity: 0.6;">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="width: 40px; height: 40px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                    <i class="fab fa-instagram" style="color: #fff;"></i>
+                        <div class="grid" style="display: grid; gap: 0.8rem;">
+                            <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="https://ui-avatars.com/api/?name=T+1&background=000&color=fff" style="width: 36px; height: 36px; border-radius: 50%;">
+                                    <div>
+                                        <h4 style="font-size: 0.9rem;">TikTok Shop - Main</h4>
+                                        <p style="font-size: 0.7rem; color: #22c55e;">Đã kết nối • 45k followers</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 style="font-size: 0.95rem;">Instagram Business</h4>
-                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Chưa kết nối</p>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem;">Cài đặt</button>
+                                    <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem; color: #f87171;" onclick="removeAccount(this)">Ngắt</button>
                                 </div>
                             </div>
-                            <button class="btn btn-accent" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Kết nối ngay</button>
+                            <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="https://ui-avatars.com/api/?name=T+2&background=000&color=fff" style="width: 36px; height: 36px; border-radius: 50%;">
+                                    <div>
+                                        <h4 style="font-size: 0.9rem;">TikTok Personal</h4>
+                                        <p style="font-size: 0.7rem; color: #22c55e;">Đã kết nối • 12k followers</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem;">Cài đặt</button>
+                                    <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem; color: #f87171;" onclick="removeAccount(this)">Ngắt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facebook Accounts -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                            <div style="width: 32px; height: 32px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-facebook-f" style="color: #fff; font-size: 0.9rem;"></i>
+                            </div>
+                            <span style="font-weight: 600; font-size: 0.95rem;">Facebook (1 tài khoản)</span>
+                            <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem; margin-left: auto;" onclick="openAddAccountModal('facebook')">+ Thêm</button>
+                        </div>
+                        <div class="grid" style="display: grid; gap: 0.8rem;">
+                            <div class="card-glass" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="https://ui-avatars.com/api/?name=F+1&background=1877F2&color=fff" style="width: 36px; height: 36px; border-radius: 50%;">
+                                    <div>
+                                        <h4 style="font-size: 0.9rem;">SuoiDesign Fanpage</h4>
+                                        <p style="font-size: 0.7rem; color: #22c55e;">Đã kết nối • 12k likes</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem;">Cài đặt</button>
+                                    <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.7rem; color: #f87171;" onclick="removeAccount(this)">Ngắt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Accounts -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                            <div style="width: 32px; height: 32px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fab fa-instagram" style="color: #fff; font-size: 0.9rem;"></i>
+                            </div>
+                            <span style="font-weight: 600; font-size: 0.95rem;">Instagram (0 tài khoản)</span>
+                            <button class="btn btn-accent" style="padding: 0.3rem 0.6rem; font-size: 0.7rem; margin-left: auto;" onclick="openAddAccountModal('instagram')">+ Kết nối</button>
+                        </div>
+                        <div class="card-glass" style="padding: 1.5rem; text-align: center; border-style: dashed; border-width: 2px;">
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Chưa có tài khoản Instagram nào được kết nối</p>
+                            <button class="btn btn-accent" style="margin-top: 0.8rem; padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="openAddAccountModal('instagram')">Kết nối Instagram</button>
                         </div>
                     </div>
                 </section>
 
                 <!-- Scheduling / Queue -->
                 <section>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Lịch trình đăng bài</h3>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Đăng bài đồng loạt</h3>
                     <div class="card" style="padding: 2rem; border: 1px solid var(--accent);">
                         <h4 style="margin-bottom: 1rem;">Chiến dịch: Bình hoa tối giản</h4>
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
@@ -102,8 +147,34 @@
                                 <span style="font-size: 0.8rem; color: var(--accent);">Dự kiến: 19:00 Hôm nay</span>
                             </div>
                         </div>
+                        
+                        <!-- Account Selection for Batch Post -->
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.8rem;">Chọn tài khoản để đăng:</label>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--glass-bg); border-radius: 0.8rem; cursor: pointer; border: 1px solid var(--glass-border);">
+                                    <input type="checkbox" checked>
+                                    <span style="font-size: 0.85rem;">TikTok Shop - Main</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--glass-bg); border-radius: 0.8rem; cursor: pointer; border: 1px solid var(--glass-border);">
+                                    <input type="checkbox" checked>
+                                    <span style="font-size: 0.85rem;">TikTok Personal</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--glass-bg); border-radius: 0.8rem; cursor: pointer; border: 1px solid var(--glass-border);">
+                                    <input type="checkbox" checked>
+                                    <span style="font-size: 0.85rem;">SuoiDesign Fanpage</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--glass-bg); border-radius: 0.8rem; cursor: pointer; border: 1px solid var(--glass-border); opacity: 0.5;">
+                                    <input type="checkbox" disabled>
+                                    <span style="font-size: 0.85rem;">Instagram (chưa kết nối)</span>
+                                </label>
+                            </div>
+                        </div>
+
                         <div style="display: flex; gap: 1rem;">
-                            <button class="btn btn-primary" style="flex: 1;">Phê duyệt & Đăng</button>
+                            <button class="btn btn-primary" style="flex: 1;" onclick="batchPost()">
+                                <i class="fas fa-paper-plane mr-2"></i> Đăng đồng loạt
+                            </button>
                             <button class="btn btn-outline" style="flex: 1;">Chỉnh sửa lịch</button>
                         </div>
                     </div>
@@ -129,6 +200,98 @@
             </div>
         </main>
     </div>
+
+    <!-- Add Account Modal -->
+    <div id="addAccountModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="card" style="width: 90%; max-width: 500px; padding: 2rem; position: relative;">
+            <button onclick="closeAddAccountModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem;">Kết nối tài khoản mới</h3>
+            
+            <div style="display: grid; gap: 1rem; margin-bottom: 1.5rem;">
+                <button class="card-glass" style="padding: 1.2rem; display: flex; align-items: center; gap: 1rem; cursor: pointer; border: 2px solid transparent;" onclick="connectOAuth('tiktok')">
+                    <div style="width: 48px; height: 48px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-tiktok" style="color: #fff; font-size: 1.5rem;"></i>
+                    </div>
+                    <div style="text-align: left;">
+                        <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">TikTok</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Kết nối tài khoản TikTok Shop hoặc cá nhân</p>
+                    </div>
+                </button>
+
+                <button class="card-glass" style="padding: 1.2rem; display: flex; align-items: center; gap: 1rem; cursor: pointer; border: 2px solid transparent;" onclick="connectOAuth('facebook')">
+                    <div style="width: 48px; height: 48px; background: #1877F2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-facebook-f" style="color: #fff; font-size: 1.5rem;"></i>
+                    </div>
+                    <div style="text-align: left;">
+                        <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Facebook</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Kết nối Fanpage hoặc trang cá nhân</p>
+                    </div>
+                </button>
+
+                <button class="card-glass" style="padding: 1.2rem; display: flex; align-items: center; gap: 1rem; cursor: pointer; border: 2px solid transparent;" onclick="connectOAuth('instagram')">
+                    <div style="width: 48px; height: 48px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-instagram" style="color: #fff; font-size: 1.5rem;"></i>
+                    </div>
+                    <div style="text-align: left;">
+                        <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Instagram</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Kết nối Instagram Business</p>
+                    </div>
+                </button>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                <i class="fas fa-lock mr-1"></i> Kết nối được bảo mật bằng OAuth 2.0
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openAddAccountModal(platform) {
+            document.getElementById('addAccountModal').style.display = 'flex';
+        }
+
+        function closeAddAccountModal() {
+            document.getElementById('addAccountModal').style.display = 'none';
+        }
+
+        function connectOAuth(platform) {
+            // Backend OAuth integration will be here
+            // For now, show a placeholder
+            alert('Đang kết nối với ' + platform + '...\n\nBackend cần tích hợp OAuth 2.0 cho ' + platform + '.\n\nAPI endpoint: /api/oauth/connect/' + platform);
+            closeAddAccountModal();
+        }
+
+        function removeAccount(button) {
+            if (confirm('Bạn có chắc muốn ngắt kết nối tài khoản này?')) {
+                const accountCard = button.closest('.card-glass');
+                accountCard.style.opacity = '0.5';
+                accountCard.querySelector('p').textContent = 'Đã ngắt kết nối';
+                button.textContent = 'Kết nối lại';
+                button.style.color = '';
+                button.onclick = function() { openAddAccountModal(); };
+            }
+        }
+
+        function batchPost() {
+            // Backend batch posting integration will be here
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const selectedAccounts = Array.from(checkboxes).map(cb => cb.parentElement.querySelector('span').textContent);
+            
+            if (selectedAccounts.length === 0) {
+                alert('Vui lòng chọn ít nhất một tài khoản để đăng bài.');
+                return;
+            }
+
+            alert('Đang đăng bài đồng loạt đến:\n\n' + selectedAccounts.join('\n') + '\n\nBackend cần tích hợp API batch posting.');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('addAccountModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAddAccountModal();
+            }
+        });
+    </script>
     <script src="../assets/script.js"></script>
 </body>
 </html>

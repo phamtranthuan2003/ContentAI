@@ -1,0 +1,100 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: suoi-design-backend
+  
+  profiles:
+    active: dev
+  
+  datasource:
+    url: jdbc:h2:mem:suoidesign
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+  
+  thymeleaf:
+    prefix: file:../
+    suffix: .html
+    cache: false
+    mode: HTML
+  
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: ${FACEBOOK_CLIENT_ID}
+            client-secret: ${FACEBOOK_CLIENT_SECRET}
+            scope:
+              - pages_read_engagement
+              - pages_manage_posts
+              - pages_manage_metadata
+              - public_profile
+            redirect-uri: ${APP_BASE_URL:http://localhost:8080}/oauth2/callback/facebook
+            authorization-grant-type: authorization_code
+          instagram:
+            client-id: ${INSTAGRAM_CLIENT_ID}
+            client-secret: ${INSTAGRAM_CLIENT_SECRET}
+            scope:
+              - instagram_basic
+              - instagram_content_publish
+            redirect-uri: ${APP_BASE_URL:http://localhost:8080}/oauth2/callback/instagram
+            authorization-grant-type: authorization_code
+        provider:
+          facebook:
+            authorization-uri: https://www.facebook.com/v18.0/dialog/oauth
+            token-uri: https://graph.facebook.com/v18.0/oauth/access_token
+            user-info-uri: https://graph.facebook.com/me
+            user-name-attribute: id
+          instagram:
+            authorization-uri: https://api.instagram.com/oauth/authorize
+            token-uri: https://api.instagram.com/oauth/access_token
+            user-info-uri: https://graph.instagram.com/me
+            user-name-attribute: id
+
+# TikTok configuration (custom OAuth)
+tiktok:
+  client-id: ${TIKTOK_CLIENT_ID}
+  client-secret: ${TIKTOK_CLIENT_SECRET}
+  redirect-uri: ${APP_BASE_URL:http://localhost:8080}/oauth2/callback/tiktok
+  auth-url: https://www.tiktok.com/v2/auth/authorize/
+  token-url: https://open.tiktokapis.com/v2/oauth/token/
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET:your-secret-key-change-in-production}
+  expiration: 86400000 # 24 hours in milliseconds
+
+# File Upload Configuration
+file:
+  upload-dir: ../uploads
+  max-size: 10MB
+
+# Logging
+logging:
+  level:
+    com.suoidesign: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
